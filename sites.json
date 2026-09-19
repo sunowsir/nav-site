@@ -1,0 +1,132 @@
+{
+  "title": "Hubble",
+  "subtitle": "一站式个人网址导航",
+  "theme": "aurora",
+  "settings": {
+    "maxSites": 200,
+    "fields": {
+      "name": true,
+      "domain": true,
+      "desc": true,
+      "latency": true,
+      "status": true
+    },
+    "cardSize": "lg",
+    "density": "comfortable",
+    "showGroupTitle": true
+  },
+  "groups": [
+    {
+      "id": "dev",
+      "title": "开发工具",
+      "sites": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com",
+          "desc": "Join the world's most widely adopted, AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity.",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 200,
+            "latency": 666,
+            "error": null,
+            "at": 1789757975223
+          },
+          "customLogo": "https://images.ctfassets.net/8aevphvgewt8/4pe4eOtUJ0ARpZRE4fNekf/f52b1f9c52f059a33170229883731ed0/GH-Homepage-Universe-img.png",
+          "password": "only-this-one"
+        },
+        {
+          "name": "GitLab",
+          "url": "https://gitlab.com",
+          "desc": "一体化 DevOps 平台"
+        },
+        {
+          "name": "Stack Overflow",
+          "url": "https://stackoverflow.com",
+          "desc": "程序员问答社区"
+        },
+        {
+          "name": "MDN",
+          "url": "https://developer.mozilla.org",
+          "desc": "Web 技术权威文档"
+        },
+        {
+          "name": "CodePen",
+          "url": "https://codepen.io",
+          "desc": "前端代码 Playground"
+        }
+      ],
+      "password": "secret123"
+    },
+    {
+      "id": "ai",
+      "title": "AI 工具",
+      "sites": [
+        {
+          "name": "ChatGPT",
+          "url": "https://chat.openai.com",
+          "desc": "OpenAI 对话式 AI"
+        },
+        {
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "desc": "Anthropic 智能助手"
+        },
+        {
+          "name": "Gemini",
+          "url": "https://gemini.google.com",
+          "desc": "Google 多模态 AI"
+        },
+        {
+          "name": "Hugging Face",
+          "url": "https://huggingface.co",
+          "desc": "开源模型与数据集社区"
+        }
+      ]
+    }
+  ],
+  "brand": {
+    "customTitle": "测试自更新",
+    "customSubtitle": "",
+    "customLogo": ""
+  },
+  "themes": {
+    "cyber": {
+      "bgImage": "",
+      "bgOpacity": 0.35,
+      "bgBlur": 0,
+      "particleDensity": 80
+    },
+    "aurora": {
+      "bgImage": "",
+      "bgOpacity": 1,
+      "bgBlur": 0,
+      "particleDensity": 30
+    },
+    "liquid": {
+      "bgImage": "",
+      "bgOpacity": 0.4,
+      "bgBlur": 0,
+      "particleDensity": 60
+    },
+    "galaxy": {
+      "bgImage": "",
+      "bgOpacity": 0.45,
+      "bgBlur": 0,
+      "particleDensity": 100
+    },
+    "sunset": {
+      "bgImage": "",
+      "bgOpacity": 0.3,
+      "bgBlur": 0,
+      "particleDensity": 70
+    },
+    "bento": {
+      "bgImage": "",
+      "bgOpacity": 0.2,
+      "bgBlur": 0,
+      "particleDensity": 50
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "nav-site",
+  "version": "1.0.0",
+  "description": "打开即用、华丽可定制的个人网址导航。所有配置**实时写回服务器**。",
+  "main": "_e2e.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "jsdom": "^24.1.3"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "title": "Hubble",
+  "subtitle": "一站式个人网址导航",
+  "theme": "nocturne",
+  "settings": {
+    "maxSites": 200,
+    "fields": {
+      "name": true,
+      "domain": true,
+      "desc": true,
+      "latency": true,
+      "status": true
+    },
+    "cardSize": "lg",
+    "density": "comfortable",
+    "showGroupTitle": true
+  },
+  "groups": [
+    {
+      "id": "dev",
+      "title": "开发工具",
+      "sites": [
+        {
+          "name": "FNOS",
+          "url": "https://fnos.yl0618.tech",
+          "desc": "飞牛OS",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 308,
+            "latency": 868,
+            "error": null,
+            "at": 1789784930167
+          },
+          "customLogo": "https://redirect.yl0618.tech:19658/favicon.ico",
+          "password": ""
+        },
+        {
+          "name": "1Panel",
+          "url": "https://1panel.yl0618.tech/1panel",
+          "desc": "Linux 服务器运维管理面板",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 308,
+            "latency": 511,
+            "error": null,
+            "at": 1789784929942
+          },
+          "customLogo": "https://redirect.yl0618.tech:19508/.safeline/static/favicon.png"
+        },
+        {
+          "name": "Astrbot",
+          "url": "https://astrbot.yl0618.tech",
+          "desc": "AstrBot - Agentic AI 助手",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 308,
+            "latency": 632,
+            "error": null,
+            "at": 1789784929947
+          },
+          "customLogo": "https://redirect.yl0618.tech:19569/.safeline/static/favicon.png"
+        },
+        {
+          "name": "Blog",
+          "url": "https://blog.yl0618.tech",
+          "desc": "晨先生的博客",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 308,
+            "latency": 731,
+            "error": null,
+            "at": 1789784930116
+          },
+          "customLogo": "https://redirect.yl0618.tech:19573/.safeline/static/favicon.png"
+        },
+        {
+          "name": "cleaner",
+          "url": "https://cleaner.yl0618.tech",
+          "desc": "高颜值水印去除神器",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 308,
+            "latency": 612,
+            "error": null,
+            "at": 1789784930089
+          },
+          "customLogo": "https://redirect.yl0618.tech:20518/.safeline/static/favicon.png"
+        },
+        {
+          "name": "route",
+          "url": "https://route.yl0618.tech",
+          "desc": "openwrt路由器",
+          "autoFetch": true,
+          "fetchInterval": 1,
+          "lastProbe": {
+            "ok": true,
+            "status": 308,
+            "latency": 731,
+            "error": null,
+            "at": 1789784930079
+          },
+          "customLogo": "https://redirect.yl0618.tech:20517/.safeline/static/favicon.png"
+        }
+      ]
+    }
+  ],
+  "themes": {
+    "atelier": {
+      "bgImage": "/uploads/1789749809808_3q41rl.jpg",
+      "bgOpacity": 0.2,
+      "bgBlur": 0,
+      "particleDensity": 0
+    },
+    "brutalist": {
+      "bgImage": "/uploads/1789749809808_3q41rl.jpg",
+      "bgOpacity": 0.2,
+      "bgBlur": 0,
+      "particleDensity": 0
+    },
+    "nocturne": {
+      "bgImage": "/uploads/1789749809808_3q41rl.jpg",
+      "bgOpacity": 0.2,
+      "bgBlur": 0,
+      "particleDensity": 0
+    },
+    "aurora": {
+      "bgImage": "",
+      "bgOpacity": 0.3,
+      "bgBlur": 0,
+      "particleDensity": 80
+    },
+    "editorial": {
+      "bgImage": "",
+      "bgOpacity": 0.25,
+      "bgBlur": 0,
+      "particleDensity": 40
+    },
+    "neon": {
+      "bgImage": "",
+      "bgOpacity": 0.4,
+      "bgBlur": 0,
+      "particleDensity": 100
+    }
+  },
+  "brand": {
+    "customTitle": "sun.wang",
+    "customSubtitle": "sun.wang 的导航页",
+    "customLogo": ""
+  }
+}

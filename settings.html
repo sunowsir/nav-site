@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="atelier">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hubble · 设置</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="settings-body">
+  <canvas id="bg-canvas"></canvas>
+  <main id="app" style="display:none"></main>
+  <header class="topbar">
+    <div class="brand">
+      <a href="/" class="brand-link">
+        <span class="brand-mark" id="brand-mark"></span>
+        <h1 id="site-title">Hubble</h1>
+      </a>
+      <span class="brand-sub">设置</span>
+    </div>
+    <div class="topbar-center"></div>
+    <div class="topbar-actions">
+      <button id="save-btn" class="primary-btn">保存</button>
+      <a href="/" class="ghost-btn">返回</a>
+    </div>
+  </header>
+
+  <main class="settings-container">
+    <aside class="settings-nav">
+      <button class="nav-btn active" data-section="appearance">外观</button>
+      <button class="nav-btn" data-section="brand">品牌</button>
+      <button class="nav-btn" data-section="groups">分组与站点</button>
+      <button class="nav-btn" data-section="theme">主题</button>
+      <button class="nav-btn" data-section="data">数据管理</button>
+    </aside>
+
+    <div class="settings-main">
+      <!-- 外观 -->
+      <section class="settings-section" data-section="appearance">
+        <h2>外观</h2>
+
+        <div class="field-row">
+          <label>卡片尺寸</label>
+          <select id="set-cardSize">
+            <option value="sm">小</option>
+            <option value="md">中</option>
+            <option value="lg">大</option>
+            <option value="xl">特大</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <label>信息密度</label>
+          <select id="set-density">
+            <option value="compact">紧凑</option>
+            <option value="comfortable">舒适</option>
+            <option value="spacious">宽松</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <label>最大站点数</label>
+          <input type="number" id="set-maxSites" min="1" max="2000" />
+        </div>
+
+        <div class="field-row">
+          <label>显示分组标题</label>
+          <label class="switch"><input type="checkbox" id="set-showGroupTitle" /><span></span></label>
+        </div>
+
+        <h3>卡片字段</h3>
+        <div class="field-row"><label>显示名称</label><label class="switch"><input type="checkbox" data-field="name" /><span></span></label></div>
+        <div class="field-row"><label>显示域名</label><label class="switch"><input type="checkbox" data-field="domain" /><span></span></label></div>
+        <div class="field-row"><label>显示描述</label><label class="switch"><input type="checkbox" data-field="desc" /><span></span></label></div>
+        <div class="field-row"><label>显示延迟</label><label class="switch"><input type="checkbox" data-field="latency" /><span></span></label></div>
+        <div class="field-row"><label>显示可达状态</label><label class="switch"><input type="checkbox" data-field="status" /><span></span></label></div>
+      </section>
+
+      <!-- 品牌 -->
+      <section class="settings-section" data-section="brand" hidden>
+        <h2>品牌</h2>
+        <p class="hint">这里配置的是<strong>整个导航站</strong>的品牌（顶栏的 logo/标题/副标题）。改完即时预览，记得点保存。</p>
+        <div id="brand-panel"></div>
+      </section>
+
+      <!-- 分组与站点 -->
+      <section class="settings-section" data-section="groups" hidden>
+        <h2>分组与站点</h2>
+        <div id="groups-editor"></div>
+        <button id="add-group-btn" class="ghost-btn">+ 新建分组</button>
+      </section>
+
+      <!-- 主题 -->
+      <section class="settings-section" data-section="theme" hidden>
+        <h2>主题</h2>
+
+        <h3>选择主题</h3>
+        <p class="hint">点击主题卡片立即切换，下方是当前主题的设置项。</p>
+        <div id="theme-grid" class="theme-grid"></div>
+
+        <h3>当前主题设置</h3>
+        <div id="current-theme-panel"></div>
+      </section>
+
+      <!-- 数据 -->
+      <section class="settings-section" data-section="data" hidden>
+        <h2>数据管理</h2>
+        <div class="field-row"><button id="export-btn" class="ghost-btn">导出 JSON</button></div>
+        <div class="field-row"><label class="ghost-btn file-label">导入 JSON<input id="import-input" type="file" accept="application/json" hidden /></label></div>
+        <div class="field-row"><button id="auto-fill-all-btn" class="ghost-btn">✨ 批量自动获取所有站点的标题和描述</button></div>
+        <div class="field-row"><button id="probe-now-btn" class="ghost-btn">立即探测全部站点</button></div>
+        <div class="field-row"><button id="reset-btn" class="danger-btn">重置为默认配置</button></div>
+        <p class="hint">所有更改会立即写回服务器 <code>sites.json</code>，刷新页面后其他设备同步可见。</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="assets/app.js"></script>
+  <script src="assets/settings.js"></script>
+</body>
+</html>

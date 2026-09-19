@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="nocturne">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hubble</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='0' fill='%231a1a1a'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23d4af37' stroke-width='1'/%3E%3Ccircle cx='32' cy='32' r='2' fill='%23d4af37'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!--
+    字体策略（按 SKILL：避免 Inter / Arial / 思源黑体）
+    Atelier  → Neue Haas Grotesk（瑞士风）+ GT Sectra（衬线标题）
+    Brutalist → Space Grotesk + Space Mono（等宽）
+    Nocturne → Cormorant Garamond + Manrope（衬线 + 现代无衬线）
+    中文   → Noto Serif SC（衬线）+ Noto Sans SC（无衬线）
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@300;400;500;600;700&family=Neue+Haas+Grotesk+Display:wght@400;500;600;700&family=GT+Sectra:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <!-- 动态背景层（WebGL canvas） -->
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <h1 id="site-title">Hubble</h1>
+      <span class="brand-sub" id="site-subtitle"></span>
+    </div>
+
+    <div class="topbar-center">
+      <div class="search-bar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search-input" type="text" placeholder="搜索…" autocomplete="off" />
+        <kbd>⌘K</kbd>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <div class="view-switcher" id="view-switcher">
+        <button data-view="grid" class="view-btn active" title="网格视图">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <span>网格</span>
+        </button>
+        <button data-view="list" class="view-btn" title="列表视图">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          <span>列表</span>
+        </button>
+        <button data-view="compact" class="view-btn" title="紧凑视图">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="1.5"/><circle cx="5" cy="12" r="1.5"/><circle cx="5" cy="18" r="1.5"/><circle cx="19" cy="6" r="1.5"/><circle cx="19" cy="12" r="1.5"/><circle cx="19" cy="18" r="1.5"/></svg>
+          <span>紧凑</span>
+        </button>
+      </div>
+      <a href="/settings" class="ghost-btn">设置</a>
+    </div>
+  </header>
+
+  <main id="app" class="container">
+    <div class="state-loading">加载中…</div>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
